@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>تحليل وِكاد المالي أكتوبر 2026</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap">
+<style>
+/* layout: one reading column (max 1040px), RTL; hairline KPI grid, summary box, sections of chart cards + findings */
+:root{
+  --bg:#fbfaf8; --surface:#ffffff; --ink:#1b1613; --ink2:#5a524b; --ink3:#8c837a;
+  --line:#e6e0d8; --line2:#f1ece6; --accent:#5a3a22; --accent-soft:#f3ebe3;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s0:#a9a199;
+  --good:#008300; --bad:#d13c3b; --warn:#b97a00;
+  --tip-bg:#1b1613; --tip-fg:#fbfaf8;
+  --font:"IBM Plex Sans Arabic","Segoe UI",Tahoma,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#161513; --surface:#1e1d1b; --ink:#f0ede8; --ink2:#bdb6ad; --ink3:#8c857c;
+  --line:#2f2d29; --line2:#262421; --accent:#d9b690; --accent-soft:#2a241e;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s0:#6f6961;
+  --good:#3fae3f; --bad:#e66767; --warn:#d99a1a; --tip-bg:#f0ede8; --tip-fg:#161513; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#161513; --surface:#1e1d1b; --ink:#f0ede8; --ink2:#bdb6ad; --ink3:#8c857c;
+  --line:#2f2d29; --line2:#262421; --accent:#d9b690; --accent-soft:#2a241e;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s0:#6f6961;
+  --good:#3fae3f; --bad:#e66767; --warn:#d99a1a; --tip-bg:#f0ede8; --tip-fg:#161513; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:15px;font-weight:400;line-height:1.75;direction:rtl;text-align:right;
+  padding-block:0 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1040px;margin:0 auto}
+h1,h2,h3{text-wrap:balance;margin:0;font-weight:600;line-height:1.3}
+h1{font-size:clamp(28px,4.5vw,42px);letter-spacing:-.01em}
+h2{font-size:22px;margin-bottom:6px}
+h3{font-size:15px;font-weight:600;color:var(--ink2)}
+p{margin:0}
+.n{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+.eyebrow{font-size:12px;letter-spacing:.08em;color:var(--accent);font-weight:600}
+header{padding-block:40px 28px;border-bottom:1px solid var(--line)}
+.toprow{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:10px}
+.wordmark{width:74px;height:40px;color:var(--accent);flex:none}
+header .sub{color:var(--ink2);margin-top:10px;max-width:62ch;font-size:15px}
+header .sub b{font-weight:600;color:var(--ink)}
+header .meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:16px;color:var(--ink3);font-size:13px}
+header .meta span b{color:var(--ink2);font-weight:500}
+
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:28px}
+.kpi{background:var(--surface);padding:16px 16px 14px;min-width:0}
+.kpi .l{font-size:12.5px;color:var(--ink3)}
+.kpi .v{font-size:28px;font-weight:600;line-height:1.15;margin-top:6px;letter-spacing:-.01em;font-variant-numeric:normal}
+.kpi .v small{font-size:14px;font-weight:400;color:var(--ink2);margin-inline-start:4px}
+.kpi .d{font-size:12.5px;color:var(--ink2);margin-top:4px;line-height:1.5}
+
+.summary{margin-top:32px;padding:22px 24px;border-inline-start:3px solid var(--accent);background:var(--accent-soft)}
+.summary h2{font-size:17px;margin-bottom:10px}
+.summary ol{margin:0;padding-inline-start:20px;display:grid;gap:8px}
+.summary li{font-size:15px}
+.summary li b{font-weight:600}
+
+section{padding-block:40px 8px;border-top:1px solid var(--line);margin-top:32px}
+section:first-of-type{border-top:0}
+.lead{font-size:16px;color:var(--ink);max-width:70ch;margin-top:6px}
+.lead b{font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:32px 28px;margin-top:26px;align-items:start}
+.grid2 > *{min-width:0}
+.span2{grid-column:1/-1}
+.card{min-width:0}
+.card h3{margin-bottom:2px}
+.card .note{font-size:12.5px;color:var(--ink3);margin-bottom:8px}
+.chart{position:relative;width:100%}
+.chart svg{display:block;width:100%;height:auto;direction:ltr;overflow:visible}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--ink2);margin:4px 0 10px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-inline-end:6px;vertical-align:-1px}
+.findings{margin:22px 0 0;padding:0;list-style:none;display:grid;gap:9px;max-width:74ch}
+.findings li{padding-inline-start:16px;position:relative;font-size:14.5px;color:var(--ink)}
+.findings li::before{content:"";position:absolute;right:0;top:.72em;width:6px;height:6px;border-radius:50%;background:var(--ink3)}
+.findings li.bad::before{background:var(--bad)}
+.findings li.good::before{background:var(--good)}
+.findings li.warn::before{background:var(--warn)}
+.findings b{font-weight:600}
+
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+.tbl{overflow-x:auto;margin-top:22px}
+th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--line2);white-space:nowrap}
+th{font-weight:500;color:var(--ink3);font-size:12.5px;border-bottom:1px solid var(--line)}
+td.n,th.n{text-align:left;direction:ltr;font-variant-numeric:tabular-nums}
+td.lbl{color:var(--ink2)}
+tr.hi td{font-weight:600;color:var(--ink)}
+.tbl.wrapcells td{white-space:normal;vertical-align:top;min-width:120px}
+.tbl.wrapcells td small{display:block;color:var(--ink3);font-size:12px}
+.pill{display:inline-block;font-size:11px;line-height:1.5;padding:0 8px;border-radius:999px;border:1px solid var(--line);color:var(--ink2);margin-inline-start:6px;vertical-align:1px;white-space:nowrap}
+.pill.bad{color:var(--bad);border-color:var(--bad)}
+.pill.warn{color:var(--warn);border-color:var(--warn)}
+
+/* 100-riyal segmented bars */
+.segtitle{margin-top:24px}
+.seg{display:flex;height:34px;gap:2px;margin:10px 0 10px;direction:rtl}
+.seg div{height:100%;min-width:3px}
+.seg div:first-child{border-radius:0 6px 6px 0}
+.seg div:last-child{border-radius:6px 0 0 6px}
+.seglegend{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px 16px;font-size:13px;color:var(--ink2)}
+.seglegend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-inline-end:6px;vertical-align:-1px}
+.seglegend b{color:var(--ink);font-weight:600;margin-inline-start:4px}
+.brows{display:grid;gap:16px;margin-top:6px}
+.brow-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:14px}
+.brow-top span:first-child{font-weight:600}
+.brow-top span:last-child{color:var(--ink2);font-size:13px}
+.brow-top b{color:var(--ink);font-weight:600}
+.seg.sm{height:18px;margin:6px 0 0}
+.seg.sm div:first-child{border-radius:0 4px 4px 0}
+.seg.sm div:last-child{border-radius:4px 0 0 4px}
+
+/* bar rows: label + value on a line, bar under it */
+.rows{display:grid;gap:10px;margin-top:6px}
+.row-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:13.5px;line-height:1.5}
+.row-top .l{min-width:0;color:var(--ink)}
+.row-top .l small{display:block;color:var(--ink3);font-size:12px}
+.row-top .v{font-weight:600;flex:none;font-size:13.5px}
+.row-top .v small{font-weight:400;color:var(--ink3);font-size:12px;margin-right:6px}
+.bar{position:relative;height:12px;margin-top:4px}
+.bar::before{content:"";position:absolute;top:-3px;bottom:-3px;right:var(--zero,0%);width:1px;background:var(--line)}
+.bar i{position:absolute;top:0;bottom:0;min-width:2px}
+.bar i.pos{right:var(--zero,0%);border-radius:4px 0 0 4px}
+.bar i.neg{left:calc(100% - var(--zero,0%));border-radius:0 4px 4px 0}
+.rowsum{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);margin-top:4px;padding-top:10px;font-weight:600;font-size:14px}
+
+.recs{counter-reset:r;display:grid;gap:14px;margin-top:20px;padding:0;list-style:none}
+.recs li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:14px;padding:16px 18px;background:var(--surface);border:1px solid var(--line)}
+.recs li::before{counter-increment:r;content:counter(r);font-size:20px;font-weight:600;color:var(--accent);line-height:1.2}
+.recs .t{font-weight:600;font-size:15px}
+.recs .w{font-size:13.5px;color:var(--ink2);margin-top:3px}
+.recs .w b{color:var(--ink);font-weight:500}
+
+.caveat{margin-top:40px;padding:16px 18px;border:1px dashed var(--line);font-size:13px;color:var(--ink2)}
+.caveat b{color:var(--ink);font-weight:500}
+details{margin-top:14px;font-size:13.5px}
+details .tbl{margin-top:10px}
+summary{cursor:pointer;color:var(--ink2)}
+footer{margin-top:40px;font-size:12.5px;color:var(--ink3)}
+
+#tip{position:fixed;pointer-events:none;background:var(--tip-bg);color:var(--tip-fg);font-size:12.5px;line-height:1.5;padding:7px 10px;border-radius:6px;opacity:0;transition:opacity .12s;z-index:50;direction:rtl;max-width:260px;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+#tip b{font-weight:600}
+:focus-visible{outline:2px solid var(--s1);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){ #tip{transition:none} }
+@media (max-width:560px){ .kpi .v{font-size:24px} h2{font-size:20px} .summary{padding:18px 18px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="toprow">
+    <div class="eyebrow">تقرير تحليلي · المالية</div>
+    <svg class="wordmark" viewBox="686.8 390.9 546.2 296.2" role="img" aria-label="وِكاد"><path transform="matrix(1,0,0,-1,1127.3045,552.1443)" d="M0 0C-3.324-6.019-14.833-23.748-21.275-24.606-97.357-23.802-153.064-25.323-221.573-26.335-241.802-26.766-262.231-27.073-282.856-27.247-294.978-27.349-307.032-27.404-319.017-27.414-324.52-26.623-332.617-24.539-338.978-18.258-349.381-7.989-348.382 7.554-349.066 13.915-353.202 52.549-350.554 92.632-359.958 130.965L-346.197 153.218C-340.627 126.38-338.261 98.034-335.949 70.499-334.642 54.929-335.527 37.542-333.502 22.233-333.161 19.612-332.617 13.446-328.475 7.454-325.707 3.439-322.389 .972-320.237-.395H-292.267L-12.28 .811C-12.052 20.048-34.553 27.28-50.338 28.567-93.034 32.046-141.368 26.744-184.299 26.121-218.295 25.624-266.227 23.03-298.735 28.909-314.097 31.691-314.433 31.509-308.327 45.096-286.576 93.504-225.709 120.616-178.93 138.466L-191.545 109.436C-223.751 97.029-265.851 81.13-290.383 56.136-291.422 55.076-293.038 55.123-292.414 52.744-283.734 52.013-275.134 49.895-266.448 49.124-194.594 42.744-119.718 54.313-47.851 50.371-28.628 49.312-3.747 46.577 3.646 25.792 7.822 14.049 5.63 10.201 0 0" fill="currentColor"/><path transform="matrix(1,0,0,-1,1103.0913,613.9441)" d="M0 0 1.815 5.95C6.843 5.203 11.593 2.383 16.492 1.363 45.095-4.589 73.256 .506 92.799 23.403 99.799 31.605 110.379 46.903 106.102 57.781 87.617 46.936 59.004 45.825 51.187 69.869 45.61 87.023 57.515 113.96 73.082 122.816 106.385 141.764 118.818 84.747 118.243 61.957 117.431 29.879 88.553-27.056 51.128-24.367 31.764-22.976 15.965-9.201 0 0M100.08 77.102C97.641 90.664 79.131 115.653 66.271 97.024 60.052 88.015 68.642 77.102 77.741 77.102Z" fill="currentColor"/><path transform="matrix(1,0,0,-1,1108.6843,667.3061)" d="M0 0 2.708-11.768 116.326 14.364 113.618 26.133Z" fill="currentColor"/><path transform="matrix(1,0,0,-1,727.3729,583.1054)" d="M0 0C-20.416 0-31.828 9.119-32.364 26.162-32.584 34.809-30.915 44.086-28.016 50.433L-25.942 50.139C-26.685 47.646-27.032 45.392-27.032 43.359-27.032 30.44-12.905 26.492 4.144 27.131 15.387 27.359 34.267 29.647 34.267 37.466 34.267 49.908 8.415 67.23-4.234 75.71L4.962 98.123 7.876 98.212C32.946 74.971 39.344 54.561 39.344 37.206 39.344 12.34 26.431-.004 0-.004Z" fill="currentColor"/></svg>
+  </div>
+  <h1>تحليل وِكاد المالي · أكتوبر 2026</h1>
+  <p class="sub">ربحية فرعي <b>الخبر</b> و<b>الدمام</b> و<b>الكاترينج</b>، وحركة الكاش خلال الشهر، من ثلاثة ملفات مالية: قائمة الدخل، بيان المقبوضات والمدفوعات، وتحليل البيان.</p>
+  <div class="meta">
+    <span><b>3</b> ملفات مالية</span>
+    <span>الفترة <b>1 – 31 أكتوبر 2026</b></span>
+    <span><b>28</b> بند مدفوعات و<b>25</b> بند مصاريف</span>
+    <span>المبالغ بالريال السعودي</span>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="l">المبيعات</div><div class="v">664<small>ألف</small></div><div class="d">الخبر 289 · الدمام 334 · الكاترينج 41</div></div>
+    <div class="kpi"><div class="l">صافي الربح</div><div class="v">94.8<small>ألف</small></div><div class="d">14.3% من المبيعات</div></div>
+    <div class="kpi"><div class="l">الربح قبل الإهلاك</div><div class="v">134.7<small>ألف</small></div><div class="d">20.3% من المبيعات</div></div>
+    <div class="kpi"><div class="l">تكلفة البضاعة</div><div class="v">34.5%</div><div class="d">الخبر 36.6% · الدمام 33.5%</div></div>
+    <div class="kpi"><div class="l">رصيد الكاش آخر الشهر</div><div class="v">538<small>ألف</small></div><div class="d">زاد 193.4 ألف خلال الشهر</div></div>
+    <div class="kpi"><div class="l">التزامات مؤجلة</div><div class="v">158<small>ألف</small></div><div class="d">داخل زيادة الكاش وبتطلع بعدين</div></div>
+  </div>
+
+  <div class="summary">
+    <h2>الخلاصة في خمس نقاط</h2>
+    <ol>
+      <li><b>الشركة رابحة:</b> صافي الربح 94.8 ألف بهامش 14.3%، و134.7 ألف قبل الإهلاك.</li>
+      <li><b>الدمام شايل الشركة والخبر على حد التعادل:</b> الدمام يجيب 70% من الربح. الخبر باع 289 ألف ونقطة تعادله 278 ألف، يعني نزول 11 ألف يدخله خسارة.</li>
+      <li><b>زيادة الكاش أغلبها مؤجل:</b> الرصيد زاد 193.4 ألف، منها 158 ألف بضاعة وتسويق وإيجار مسجلة وما اندفعت، وتحصيل أعلى من الإيراد المسجل.</li>
+      <li><b>خُمس المدفوعات خارج التشغيل:</b> 112 ألف (21.8%) راحت لأصول وسلف شركات شقيقة وضريبة.</li>
+      <li><b>الملفات تحتاج مراجعة:</b> ملف التحليل فيه خطأ بقيمة 24,712، وفيه ستة أسئلة مفتوحة أهمها ضريبة الربع الثالث.</li>
+    </ol>
+  </div>
+</header>
+
+<!-- ============ الربحية ============ -->
+<section id="profit">
+  <div class="eyebrow">الربحية</div>
+  <h2>وين تروح كل 100 ريال مبيعات؟</h2>
+  <p class="lead">من كل 100 ريال يبقى <b>14.3</b> ربح صافي. تكلفة البضاعة تاخذ <b>34.5</b>، والموظفين بكل بنودهم <b>24.4</b>، والإيجار مع الإهلاك <b>13</b>.</p>
+  <div class="seg" id="seg"></div>
+  <div class="seglegend" id="seglegend"></div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>نفس التقسيم في كل فرع</h3>
+      <div class="note">% من مبيعات الفرع، بنفس ألوان الشريط اللي فوق</div>
+      <div class="brows" id="brows"></div>
+    </div>
+    <div class="card">
+      <h3>صافي الربح حسب الفرع (ألف ر.س)</h3>
+      <div class="note">الدمام 70% من الربح، الكاترينج 23%، الخبر 7%</div>
+      <div class="chart" id="c-profit"></div>
+    </div>
+  </div>
+
+  <div class="tbl"><table>
+    <thead><tr><th>أكتوبر 2026</th><th class="n">الخبر</th><th class="n">الدمام</th><th class="n">الكاترينج</th><th class="n">الإجمالي</th></tr></thead>
+    <tbody>
+      <tr><td class="lbl">المبيعات</td><td class="n">289,258</td><td class="n">333,754</td><td class="n">41,244</td><td class="n">664,257</td></tr>
+      <tr><td class="lbl">تكلفة البضاعة من المبيعات</td><td class="n">36.6%</td><td class="n">33.5%</td><td class="n">27.8%</td><td class="n">34.5%</td></tr>
+      <tr><td class="lbl">الموظفين بكل بنودهم</td><td class="n">26.1%</td><td class="n">25.0%</td><td class="n">7.8%</td><td class="n">24.4%</td></tr>
+      <tr><td class="lbl">إيجار + إهلاك</td><td class="n">18.9%</td><td class="n">8.7%</td><td class="n">6.3%</td><td class="n">13.0%</td></tr>
+      <tr><td class="lbl">تسويق</td><td class="n">5.9%</td><td class="n">5.0%</td><td class="n">0.6%</td><td class="n">5.1%</td></tr>
+      <tr><td class="lbl">الربح قبل الإهلاك</td><td class="n">35,619</td><td class="n">76,994</td><td class="n">22,083</td><td class="n">134,695</td></tr>
+      <tr class="hi"><td class="lbl">صافي الربح</td><td class="n">6,619</td><td class="n">66,115</td><td class="n">22,083</td><td class="n">94,817</td></tr>
+      <tr class="hi"><td class="lbl">هامش الربح</td><td class="n">2.3%</td><td class="n">19.8%</td><td class="n">53.5%</td><td class="n">14.3%</td></tr>
+      <tr><td class="lbl">نقطة التعادل (محسوبة هنا)</td><td class="n">277,900</td><td class="n">229,700</td><td class="n">—</td><td class="n">—</td></tr>
+    </tbody>
+  </table></div>
+
+  <ul class="findings">
+    <li class="good"><b>الدمام:</b> 66.1 ألف صافي بهامش 19.8%، ومبيعاته فوق نقطة التعادل بـ 31%.</li>
+    <li class="bad"><b>الخبر:</b> 6.6 ألف فقط بهامش 2.3%. الإيجار والإهلاك ياكلون 18.9% من مبيعاته مقابل 8.7% في الدمام.</li>
+    <li class="warn"><b>تكلفة البضاعة 34.5%</b> إجمالاً و36.6% في الخبر، وملاحظات قائمة الدخل نفسها تقول إن استهلاك المواد الخام مرتفع. كل نقطة تنزل تساوي 6.6 ألف ربح بالشهر.</li>
+    <li><b>الموظفين 24.4% من المبيعات</b> بكل بنودهم: رواتب، إقامات، تأمين طبي، تأمينات، نهاية خدمة، وإجازات. البضاعة مع الموظفين 58.9%.</li>
+    <li class="warn"><b>هامش الكاترينج 53.5% منفوخ:</b> ما محمّل عليه رواتب إدارية ولا إهلاك، ورواتبه المباشرة 2,200 فقط. يبقى الأعلى هامشاً، لكن الرقم الحقيقي أقل.</li>
+    <li><b>التسويق 33.9 ألف</b> (5.1% من المبيعات)، ونصيب الكاترينج منها 250 ريال.</li>
+  </ul>
+</section>
+
+<!-- ============ الخبر ============ -->
+<section id="khobar">
+  <div class="eyebrow">فرع الخبر</div>
+  <h2>على حد التعادل بفارق 11 ألف</h2>
+  <p class="lead">الخبر باع <b>289 ألف</b> ونقطة تعادله <b>278 ألف</b>. الفرق بينه وبين الدمام <b>59.5 ألف</b> ربح، نصفه من المبيعات وتكلفة البضاعة ونصفه من مصاريف ثابتة أعلى.</p>
+  <div class="grid2">
+    <div class="card">
+      <h3>ليش ربح الخبر أقل من الدمام؟ (ألف ر.س)</h3>
+      <div class="note">كل بند: كم ينقّص ربح الخبر مقارنة بالدمام</div>
+      <div class="legend"><span><i style="background:var(--s2)"></i>ينقّص ربح الخبر</span><span><i style="background:var(--s1)"></i>لصالح الخبر</span></div>
+      <div class="rows" id="r-gap"></div>
+    </div>
+    <div class="card">
+      <h3>المبيعات مقابل نقطة التعادل (ألف ر.س)</h3>
+      <div class="note">نقطة التعادل: المبيعات اللي عندها الفرع لا يربح ولا يخسر</div>
+      <div class="legend"><span><i style="background:var(--s1)"></i>مبيعات أكتوبر</span><span><i style="background:var(--s2)"></i>نقطة التعادل</span></div>
+      <div class="chart" id="c-be"></div>
+    </div>
+    <div class="card span2">
+      <h3>ربح الخبر الشهري في كل حالة (ألف ر.س)</h3>
+      <div class="note">كل حالة تغيّر شي واحد والباقي ثابت على أرقام أكتوبر</div>
+      <div class="chart" id="c-scen"></div>
+    </div>
+  </div>
+  <ul class="findings">
+    <li class="bad"><b>هامش الأمان 3.9% فقط:</b> المبيعات فوق نقطة التعادل بـ 11 ألف، وملاحظات قائمة الدخل تقول إن مبيعات الفرع نازلة بشكل كبير.</li>
+    <li class="warn"><b>إهلاك الخبر 29,000 رقم مدوّر وبدون رقم حساب</b>، مقابل 10,879 للدمام. هذا البند لحاله يحدد إذا هامش الخبر 2.3% أو 12.3%.</li>
+    <li class="warn"><b>الرسوم البنكية 2.5% من مبيعات الخبر</b> (7,297) مقابل 0.75% في الدمام (2,511). يا توزيع غلط بين الفرعين يا فرق فعلي يحتاج تفسير.</li>
+    <li><b>تكلفة البضاعة هي أسرع رافعة:</b> نزولها من 36.6% إلى 32% يرفع ربح الخبر من 6.6 إلى 20 ألف بدون أي زيادة في المبيعات.</li>
+    <li><b>المبيعات هي الرافعة الأكبر:</b> عند 350 ألف الخبر يربح 42 ألف، وعند 450 ألف يربح 100 ألف، لكن الوصول لها يحتاج زيادة 56%.</li>
+  </ul>
+</section>
+
+<!-- ============ الكاش ============ -->
+<section id="cash">
+  <div class="eyebrow">الكاش</div>
+  <h2>الكاش زاد 193 ألف والربح 95 ألف</h2>
+  <p class="lead">الرصيد طلع من <b>344.6</b> إلى <b>538.0 ألف</b>. لكن <b>158 ألف</b> من الزيادة مبالغ مسجلة كمصروف وما اندفعت، أو تحصيل أعلى من الإيراد المسجل، يعني بتطلع من الرصيد بعدين.</p>
+
+  <h3 class="segtitle">من كل 100 ريال مدفوعة في أكتوبر</h3>
+  <div class="seg" id="seg2"></div>
+  <div class="seglegend" id="seglegend2"></div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>من الربح إلى زيادة الكاش (ألف ر.س)</h3>
+      <div class="note">البنود المعلّمة «مؤجل» دخلت الرصيد الحين وبتطلع منه بعدين</div>
+      <div class="legend"><span><i style="background:var(--s1)"></i>يزيد الكاش</span><span><i style="background:var(--s2)"></i>ينقّص الكاش</span></div>
+      <div class="rows" id="r-bridge"></div>
+    </div>
+    <div class="card">
+      <h3>أكبر المدفوعات (ألف ر.س)</h3>
+      <div class="note">من أصل 514.8 ألف مدفوعة، بنفس ألوان الشريط اللي فوق</div>
+      <div class="rows" id="r-pay"></div>
+    </div>
+  </div>
+
+  <div class="tbl"><table>
+    <thead><tr><th>حركة الكاش في أكتوبر</th><th class="n">ر.س</th></tr></thead>
+    <tbody>
+      <tr><td class="lbl">الرصيد أول الشهر</td><td class="n">344,599</td></tr>
+      <tr><td class="lbl">تحصيلات إيرادات</td><td class="n">684,283</td></tr>
+      <tr><td class="lbl">تحصيلات نقدية</td><td class="n">23,910</td></tr>
+      <tr><td class="lbl">المدفوعات</td><td class="n">−514,798</td></tr>
+      <tr class="hi"><td class="lbl">الرصيد آخر الشهر</td><td class="n">537,994</td></tr>
+    </tbody>
+  </table></div>
+
+  <ul class="findings">
+    <li class="warn"><b>77 ألف بضاعة مسجلة تكلفة وما اندفعت:</b> تكلفة البضاعة 229.2 ألف والمدفوع للمشتريات 152.1 ألف. يا مخزون انسحب يا ديون موردين، والاثنين يضغطون الكاش الشهر الجاي.</li>
+    <li class="warn"><b>ضريبة مبيعات أكتوبر تقديرها 99.6 ألف</b> قبل خصم ضريبة المشتريات، بنسبة ×1.15 الظاهرة بين قائمة الدخل وبيان الكاش. وهي داخل الرصيد ومو لكم.</li>
+    <li class="bad"><b>50.3 ألف لشركات شقيقة</b> (بالية 27.7، مشاري 20، ونا 2.6)، يعني 53% من ربح الشهر طلع سلف.</li>
+    <li><b>الرصيد يغطي شهر وثلث</b> من مدفوعات التشغيل (402.5 ألف بالشهر).</li>
+    <li><b>إيجار الفرعين 43.9 ألف بالشهر</b> مسجل في قائمة الدخل، والمدفوع في أكتوبر كان لمخازن وحفلة وسكن. الدفعة الجاية بتكون كبيرة: الخبر حوالي 306 ألف بالسنة والدمام 220 ألف.</li>
+    <li><b>التحصيل النقدي 23.9 ألف فقط</b>، يعني 3.4% من وارد الشهر، والباقي مسجل في البيان كتحصيلات إيرادات.</li>
+  </ul>
+</section>
+
+<!-- ============ الملفات ============ -->
+<section id="files">
+  <div class="eyebrow">مراجعة الملفات</div>
+  <h2>خطأ واحد في الحساب وخمس ملاحظات</h2>
+  <p class="lead">كل المجاميع انجمعت من جديد وطلعت صحيحة، ماعدا بند واحد في ملف التحليل.</p>
+  <div class="tbl wrapcells"><table>
+    <thead><tr><th>البند</th><th>المكتوب في الملف</th><th>الصحيح</th></tr></thead>
+    <tbody>
+      <tr class="hi"><td>قيمة باقي المصروفات<span class="pill bad">خطأ حسابي</span><small>ملف التحليل</small></td><td><span class="n">99,274.20</span></td><td><span class="n">123,986.20</span><small>الناقص 24,712 وهو بند الإقامات بالضبط، ساقط من المعادلة</small></td></tr>
+      <tr><td>تاريخ الرصيد الختامي<small>ملف التحليل</small></td><td><span class="n">31/08/2026</span></td><td><span class="n">31/10/2026</span></td></tr>
+      <tr><td>نسبة المدفوعات خلال الشهر<small>ملف التحليل</small></td><td><span class="n">48.90%</span><small>مقسومة على الوارد مع الرصيد الافتتاحي</small></td><td><span class="n">72.7%</span><small>من وارد الشهر نفسه</small></td></tr>
+      <tr><td>نهاية الفترة<small>بيان المقبوضات والمدفوعات</small></td><td><span class="n">30/10/2026</span></td><td><span class="n">31/10/2026</span><small>مثل قائمة الدخل وملف التحليل</small></td></tr>
+    </tbody>
+  </table></div>
+  <ul class="findings">
+    <li class="warn"><b>إهلاك الخبر تقدير:</b> 29,000 رقم مدوّر وبدون رقم حساب في قائمة الدخل، ويحتاج سجل أصول يثبته.</li>
+    <li><b>بيان الكاش خالط التشغيل مع غيره:</b> الأصول وسلف الشركات الشقيقة والضريبة في نفس قائمة مصاريف التشغيل، فما يبيّن كم يصرف التشغيل فعلاً.</li>
+  </ul>
+</section>
+
+<!-- ============ الأسئلة ============ -->
+<section id="questions">
+  <div class="eyebrow">أسئلة مفتوحة</div>
+  <h2>ستة أسئلة تحتاج جواب</h2>
+  <p class="lead">الأجوبة تغيّر قراءة الأرقام، خصوصاً الأول والثاني.</p>
+  <ol class="recs">
+    <li><div><div class="t">ليش ضريبة الربع الثالث 8,789 فقط؟</div><div class="w">مبيعات شهر واحد عليها حوالي <b>99.6 ألف</b> ضريبة قبل خصم ضريبة المشتريات. وش اللي نزّل ضريبة ثلاثة شهور لهالرقم؟</div></div></li>
+    <li><div><div class="t">فرق الـ 77 ألف بين تكلفة البضاعة والمدفوع للمشتريات</div><div class="w">مخزون انسحب ولا ديون موردين؟ المطلوب <b>جرد أول وآخر الشهر</b> ورصيد الموردين.</div></div></li>
+    <li><div><div class="t">سلف الشركات الشقيقة</div><div class="w">طلع هالشهر <b>50.3 ألف</b>. كم الرصيد التراكمي على بالية ومشاري وونا، ومتى ترجع؟</div></div></li>
+    <li><div><div class="t">متى دفعة إيجار الفرعين الجاية وكم؟</div><div class="w">المسجل <b>43.9 ألف بالشهر</b> وما اندفع منه شي في أكتوبر.</div></div></li>
+    <li><div><div class="t">الرسوم البنكية للخبر</div><div class="w"><b>7,297</b> مقابل 2,511 للدمام مع إن مبيعات الخبر أقل. توزيع غلط ولا فعلي؟</div></div></li>
+    <li><div><div class="t">كيف مسجلة مبيعات تطبيقات التوصيل؟</div><div class="w">مصروف تطبيقات التوصيل في قائمة الدخل <b>14.9 ألف</b> وما له دفعة مقابلة في بيان الكاش. هل المبيعات مسجلة قبل خصم التطبيقات ولا بعده؟</div></div></li>
+  </ol>
+</section>
+
+<!-- ============ التوصيات ============ -->
+<section id="recs">
+  <div class="eyebrow">ماذا نفعل</div>
+  <h2>خمس خطوات بالترتيب</h2>
+  <ol class="recs">
+    <li><div><div class="t">نزّلوا تكلفة البضاعة في الخبر</div><div class="w">من 36.6% إلى 32% تساوي <b>13.3 ألف ربح بالشهر</b>، وإلى 30% تساوي 19.1 ألف. ملاحظات قائمة الدخل نفسها تقول إن استهلاك المواد الخام في الفرع مرتفع.</div></div></li>
+    <li><div><div class="t">هدف مرحلي للخبر: 350 ألف</div><div class="w">عندها يربح الفرع <b>42 ألف</b>. الوصول إلى 450 ألف يحتاج زيادة 56%، وهذا بعيد على المدى القريب.</div></div></li>
+    <li><div><div class="t">حوّلوا جزء من التسويق للكاترينج</div><div class="w">ماخذ <b>250 ريال</b> من أصل 33.9 ألف وهو الأعلى هامشاً، وكل مبيعاته 41 ألف.</div></div></li>
+    <li><div><div class="t">احجزوا الضريبة من الرصيد</div><div class="w">حوالي <b>99.6 ألف</b> ضريبة مبيعات عن أكتوبر قبل خصم ضريبة المشتريات. لا تعتبرونها كاش متاح.</div></div></li>
+    <li><div><div class="t">جدول سداد لسلف الشركات الشقيقة، وبيان كاش مفصول</div><div class="w">ثلاث خانات: <b>تشغيل، أصول، شركات شقيقة</b>. كذا يبان كل شهر كم يصرف التشغيل فعلاً وكم يطلع برّا.</div></div></li>
+  </ol>
+</section>
+
+<div class="caveat">
+  <b>حدود البيانات.</b> كل الأرقام من الملفات الثلاثة فقط، وما استُخدم أي مصدر غيرها. الربح قبل الإهلاك، نقطة التعادل، تفصيل الفرق بين الفرعين، الجسر من الربح إلى الكاش، وتقسيم المدفوعات إلى تشغيل وغيره محسوبة هنا وليست في الملفات الأصلية. نقطة التعادل = التكاليف الثابتة ÷ هامش المساهمة بعد تكلفة البضاعة وعمولات التوصيل والرسوم البنكية. اعتبار قائمة الدخل قبل الضريبة مبني على مطابقة بند واحد: النت والجوال 610 فيها و701.50 في بيان الكاش، يعني ×1.15 بالضبط. ما فيه ميزانية ولا أرقام سبتمبر، فما نقدر نحكم على المخزون والموردين وأرصدة الشركات الشقيقة ولا على اتجاه المبيعات.
+</div>
+
+<details><summary>قائمة الدخل كاملة حسب البند</summary>
+  <div class="tbl"><table>
+    <thead><tr><th>البند</th><th class="n">الخبر</th><th class="n">الدمام</th><th class="n">الكاترينج</th><th class="n">الإجمالي</th><th class="n">من المبيعات</th></tr></thead>
+    <tbody>
+      <tr class="hi"><td class="lbl">المبيعات</td><td class="n">289,258</td><td class="n">333,754</td><td class="n">41,244</td><td class="n">664,257</td><td class="n">100%</td></tr>
+      <tr><td class="lbl">تكلفة البضاعة المباعة</td><td class="n">105,895</td><td class="n">111,870</td><td class="n">11,456</td><td class="n">229,221</td><td class="n">34.5%</td></tr>
+      <tr><td class="lbl">رواتب وأجور مباشرة</td><td class="n">35,633</td><td class="n">45,121</td><td class="n">2,200</td><td class="n">82,954</td><td class="n">12.5%</td></tr>
+      <tr class="hi"><td class="lbl">إجمالي الربح</td><td class="n">147,731</td><td class="n">176,763</td><td class="n">27,588</td><td class="n">352,081</td><td class="n">53.0%</td></tr>
+      <tr><td class="lbl">إيجار</td><td class="n">25,535</td><td class="n">18,319</td><td class="n">2,609</td><td class="n">46,464</td><td class="n">7.0%</td></tr>
+      <tr><td class="lbl">إهلاك</td><td class="n">29,000</td><td class="n">10,879</td><td class="n">—</td><td class="n">39,879</td><td class="n">6.0%</td></tr>
+      <tr><td class="lbl">الرواتب والرسوم الإدارية</td><td class="n">19,218</td><td class="n">19,218</td><td class="n">—</td><td class="n">38,437</td><td class="n">5.8%</td></tr>
+      <tr><td class="lbl">تسويق ودعاية</td><td class="n">16,932</td><td class="n">16,689</td><td class="n">250</td><td class="n">33,871</td><td class="n">5.1%</td></tr>
+      <tr><td class="lbl">إقامات وكروت عمل</td><td class="n">11,149</td><td class="n">8,668</td><td class="n">—</td><td class="n">19,818</td><td class="n">3.0%</td></tr>
+      <tr><td class="lbl">تطبيقات التوصيل</td><td class="n">7,650</td><td class="n">7,281</td><td class="n">—</td><td class="n">14,931</td><td class="n">2.2%</td></tr>
+      <tr><td class="lbl">رسوم وعمولات بنكية</td><td class="n">7,297</td><td class="n">2,511</td><td class="n">—</td><td class="n">9,808</td><td class="n">1.5%</td></tr>
+      <tr><td class="lbl">كهرباء</td><td class="n">5,101</td><td class="n">2,941</td><td class="n">—</td><td class="n">8,042</td><td class="n">1.2%</td></tr>
+      <tr><td class="lbl">خدمات عامة</td><td class="n">2,800</td><td class="n">4,800</td><td class="n">—</td><td class="n">7,600</td><td class="n">1.1%</td></tr>
+      <tr><td class="lbl">إجازة سنوية</td><td class="n">3,491</td><td class="n">3,628</td><td class="n">—</td><td class="n">7,120</td><td class="n">1.1%</td></tr>
+      <tr><td class="lbl">نقل ومواصلات</td><td class="n">1,350</td><td class="n">4,850</td><td class="n">—</td><td class="n">6,200</td><td class="n">0.9%</td></tr>
+      <tr><td class="lbl">نهاية الخدمة</td><td class="n">2,692</td><td class="n">3,372</td><td class="n">—</td><td class="n">6,064</td><td class="n">0.9%</td></tr>
+      <tr><td class="lbl">تأمين طبي ومصاريف طبية</td><td class="n">2,448</td><td class="n">2,592</td><td class="n">—</td><td class="n">5,040</td><td class="n">0.8%</td></tr>
+      <tr><td class="lbl">مستلزمات تشغيلية</td><td class="n">842</td><td class="n">1,142</td><td class="n">1,086</td><td class="n">3,069</td><td class="n">0.5%</td></tr>
+      <tr><td class="lbl">رسوم واشتراكات</td><td class="n">980</td><td class="n">980</td><td class="n">260</td><td class="n">2,220</td><td class="n">0.3%</td></tr>
+      <tr><td class="lbl">صيانة عامة</td><td class="n">1,011</td><td class="n">764</td><td class="n">300</td><td class="n">2,074</td><td class="n">0.3%</td></tr>
+      <tr><td class="lbl">نظافة</td><td class="n">2,000</td><td class="n">—</td><td class="n">—</td><td class="n">2,000</td><td class="n">0.3%</td></tr>
+      <tr><td class="lbl">تأمينات اجتماعية</td><td class="n">928</td><td class="n">928</td><td class="n">—</td><td class="n">1,856</td><td class="n">0.3%</td></tr>
+      <tr><td class="lbl">عمولات وحوافز</td><td class="n">—</td><td class="n">—</td><td class="n">1,000</td><td class="n">1,000</td><td class="n">0.2%</td></tr>
+      <tr><td class="lbl">نت وجوال</td><td class="n">350</td><td class="n">260</td><td class="n">—</td><td class="n">610</td><td class="n">0.1%</td></tr>
+      <tr><td class="lbl">انتقالات</td><td class="n">268</td><td class="n">268</td><td class="n">—</td><td class="n">537</td><td class="n">0.1%</td></tr>
+      <tr><td class="lbl">مياه</td><td class="n">—</td><td class="n">400</td><td class="n">—</td><td class="n">400</td><td class="n">0.1%</td></tr>
+      <tr><td class="lbl">ضيافة، مكتبية، وسيارات</td><td class="n">71</td><td class="n">156</td><td class="n">—</td><td class="n">227</td><td class="n">0.0%</td></tr>
+      <tr class="hi"><td class="lbl">مجموع التكاليف التشغيلية</td><td class="n">141,112</td><td class="n">110,648</td><td class="n">5,505</td><td class="n">257,264</td><td class="n">38.7%</td></tr>
+      <tr class="hi"><td class="lbl">صافي الربح</td><td class="n">6,619</td><td class="n">66,115</td><td class="n">22,083</td><td class="n">94,817</td><td class="n">14.3%</td></tr>
+    </tbody>
+  </table></div>
+</details>
+
+<footer>أُعدّ من الملفات المالية الثلاثة لشهر أكتوبر 2026: قائمة الدخل، بيان المقبوضات والمدفوعات للحسابات البنكية، وتحليل البيان · جميع المبالغ ريال سعودي · 9 نوفمبر 2026</footer>
+</div>
+<div id="tip" role="tooltip"></div>
+
+<script>
+const NS='http://www.w3.org/2000/svg';
+const fmt=n=>n==null?'—':Number(n).toLocaleString('en-US',{maximumFractionDigits:1});
+const el=(t,a={},parent)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(parent)parent.appendChild(e);return e};
+const tip=document.getElementById('tip');
+function showTip(html,x,y){tip.innerHTML=html;tip.style.opacity=1;const w=tip.offsetWidth,h=tip.offsetHeight;let L=x+14,T=y-h-10;if(L+w>innerWidth-8)L=x-w-14;if(L<8)L=8;if(T<8)T=y+16;tip.style.left=L+'px';tip.style.top=T+'px'}
+function hideTip(){tip.style.opacity=0}
+function bindTip(node,html){node.addEventListener('mousemove',e=>showTip(html,e.clientX,e.clientY));node.addEventListener('mouseleave',hideTip)}
+function nice(max){const p=Math.pow(10,Math.floor(Math.log10(max)));const f=max/p;const s=f<=1?.25:f<=2?.5:f<=5?1:2;return {step:s*p,top:Math.ceil(max/(s*p))*(s*p)}}
+function topRect(x,y,w,h,r){r=Math.min(r,w/2,h);return `M${x},${y+h}V${y+r}Q${x},${y} ${x+r},${y}H${x+w-r}Q${x+w},${y} ${x+w},${y+r}V${y+h}Z`}
+function leftRect(x,y,w,h,r){r=Math.min(r,h/2,w);return `M${x+w},${y}H${x+r}Q${x},${y} ${x},${y+r}V${y+h-r}Q${x},${y+h} ${x+r},${y+h}H${x+w}Z`}
+const charts=[];
+function chart(id,fn){const c=document.getElementById(id);if(!c)return;const draw=()=>{c.innerHTML='';const w=c.clientWidth||600;fn(c,w)};charts.push(draw);draw()}
+const txt=(p,x,y,s,a={})=>{const t=el('text',Object.assign({x,y,'font-size':11.5,'font-family':'inherit',fill:'var(--ink3)'},a),p);t.textContent=s;return t};
+const T={ink:'var(--ink)',ink2:'var(--ink2)',ink3:'var(--ink3)',line:'var(--line)',surf:'var(--bg)'};
+
+/* columns (single series) */
+function columns(c,W,{labels,values,color='var(--s1)',height=250,tips,unit=''}){
+  const H=height,ml=36,mr=8,mt=22,mb=28,pw=W-ml-mr,ph=H-mt-mb,n=labels.length;
+  const {step,top}=nice(Math.max(...values));const y=v=>mt+ph-(v/top)*ph;
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,width:W,height:H},c);
+  for(let v=0;v<=top+1e-9;v+=step){el('line',{x1:ml,x2:W-mr,y1:y(v),y2:y(v),stroke:T.line,'stroke-width':1},svg);txt(svg,ml-6,y(v)+4,fmt(v),{'text-anchor':'end'})}
+  const band=pw/n,bw=Math.min(24,band*0.62);
+  labels.forEach((lb,i)=>{const x=ml+band*i+(band-bw)/2,v=values[i],h=(v/top)*ph;
+    el('path',{d:topRect(x,y(v),bw,h,4),fill:color},svg);
+    txt(svg,x+bw/2,H-mb+16,lb,{'text-anchor':'middle',fill:T.ink2});
+    txt(svg,x+bw/2,y(v)-6,fmt(v),{'text-anchor':'middle',fill:T.ink,'font-size':11.5,'font-weight':500});
+    const hit=el('rect',{x:x-14,y:mt,width:bw+28,height:ph,fill:'transparent'},svg);
+    bindTip(hit,`<b>${lb}</b><br>${tips?tips[i]:fmt(v)+unit}`)});
+}
+/* RTL horizontal bars: label at right, bar grows leftwards; optional grouped series */
+function hbars(c,W,{items,color='var(--s1)',unit='',labelW=0.42,rowH=30,series,tips}){
+  const lw=Math.min(240,W*labelW),n=items.length,groups=series?series.length:1,rh=rowH+(groups>1?(groups-1)*16:0),H=n*rh+6;
+  const ss=series||[{values:items.map(k=>k[1]),color,name:''}];
+  const max=Math.max(...ss.flatMap(s=>s.values));
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,width:W,height:H},c);
+  const pw=W-lw-56,x0=W-lw;
+  items.forEach((it,i)=>{const yy=i*rh+3;
+    txt(svg,W,yy+rh/2+4,it[0],{fill:T.ink,'font-size':12.5,style:'direction:rtl;text-anchor:start'});
+    ss.forEach((s,k)=>{const v=s.values[i],bw=Math.max(0,(v/max)*pw),bh=Math.min(14,rh/groups-4),by=yy+(groups>1?k*(bh+4)+(rh-groups*(bh+4))/2:(rh-bh)/2),bx=x0-8-bw;
+      el('path',{d:leftRect(bx,by,bw,bh,4),fill:s.color},svg);
+      txt(svg,bx-6,by+bh/2+4,v.toFixed(1)+unit,{'text-anchor':'end',fill:T.ink2,'font-size':11.5,'font-weight':500});
+      const hit=el('rect',{x:bx-40,y:by-2,width:bw+48,height:bh+4,fill:'transparent'},svg);
+      bindTip(hit,`<b>${it[0]}</b><br>${s.name?s.name+': ':''}${v.toFixed(1)}${unit}`+(tips&&tips[i]?`<br>${tips[i]}`:''))});
+  });
+}
+/* segmented 100-riyal bar + legend */
+function seg(barId,legId,parts,tipUnit){
+  const s=document.getElementById(barId),l=legId&&document.getElementById(legId);
+  parts.forEach(([n,v,col])=>{const d=document.createElement('div');d.style.width=v+'%';d.style.background=col;bindTip(d,`<b>${n}</b><br>${v} ${tipUnit}`);s.appendChild(d);
+    if(l){const li=document.createElement('div');li.innerHTML=`<i style="background:${col}"></i>${n}<b>${v}</b>`;l.appendChild(li)}});
+}
+/* bar rows: label + value line, bar below; supports a zero line for diverging values */
+function rows(id,{items,neg=0,pos,signed=false,posColor='var(--s1)',negColor='var(--s2)',total,unit=' ألف ر.س'}){
+  const c=document.getElementById(id),dom=neg+pos,zero=neg/dom*100;
+  const show=v=>(v<0?'−':(signed?'+':''))+Math.abs(v).toFixed(1);
+  items.forEach(it=>{const {l,sub,v,pill,color,pct,tip:t}=it;const w=Math.abs(v)/dom*100;
+    const r=document.createElement('div');r.className='row';
+    r.innerHTML=`<div class="row-top"><span class="l">${l}${pill?`<span class="pill warn">${pill}</span>`:''}${sub?`<small>${sub}</small>`:''}</span><span class="v"><span class="n">${show(v)}</span>${pct?`<small class="n">${pct}</small>`:''}</span></div>`+
+      `<div class="bar" style="--zero:${zero}%"><i class="${v<0?'neg':'pos'}" style="width:${w}%;background:${color||(v<0?negColor:posColor)}"></i></div>`;
+    bindTip(r,`<b>${l}</b><br>${show(v)}${unit}`+(t?`<br>${t}`:''));c.appendChild(r)});
+  if(total){const d=document.createElement('div');d.className='rowsum';d.innerHTML=`<span>${total[0]}</span><span class="n">${total[1]}</span>`;c.appendChild(d)}
+}
+
+/* ---- الربحية ---- */
+const PARTS=['صافي الربح','تكلفة البضاعة','الموظفين بكل بنودهم','إيجار وإهلاك','تسويق ومصاريف أخرى'];
+const COLS=['var(--s1)','var(--s2)','var(--s3)','var(--s4)','var(--s0)'];
+seg('seg','seglegend',[14.3,34.5,24.4,13.0,13.8].map((v,i)=>[PARTS[i],v,COLS[i]]),'من كل 100 ر.س مبيعات');
+(function(){const B=[['فرع الخبر',[2.3,36.6,26.1,18.9,16.1]],['فرع الدمام',[19.8,33.5,25.0,8.7,12.9]],['الكاترينج',[53.5,27.8,7.8,6.3,4.6]]];
+  const c=document.getElementById('brows');
+  B.forEach(([name,vals],k)=>{const w=document.createElement('div');w.innerHTML=`<div class="brow-top"><span>${name}</span><span>الربح <b class="n">${vals[0]}%</b> · البضاعة <b class="n">${vals[1]}%</b></span></div><div class="seg sm" id="bseg${k}"></div>`;c.appendChild(w);
+    seg('bseg'+k,null,vals.map((v,i)=>[PARTS[i]+' · '+name,v,COLS[i]]),'% من مبيعات الفرع')})})();
+chart('c-profit',(c,W)=>columns(c,W,{labels:['الخبر','الدمام','الكاترينج'],values:[6.6,66.1,22.1],
+  tips:['صافي الربح 6,619 ر.س<br>الهامش 2.3%','صافي الربح 66,115 ر.س<br>الهامش 19.8%','صافي الربح 22,083 ر.س<br>الهامش 53.5%']}));
+
+/* ---- الخبر ---- */
+rows('r-gap',{neg:10,pos:30,posColor:'var(--s2)',negColor:'var(--s1)',total:['الفرق في الربح','59.5'],items:[
+  {l:'مبيعات أقل بـ 44.5 ألف',v:29.6},
+  {l:'إهلاك أعلى',sub:'29,000 مقابل 10,879',v:18.1},
+  {l:'تكلفة بضاعة أعلى',sub:'36.6% مقابل 33.5%',v:8.9},
+  {l:'إيجار أعلى',sub:'25,535 مقابل 18,319',v:7.2},
+  {l:'رسوم بنكية أعلى',sub:'7,297 مقابل 2,511',v:4.8},
+  {l:'كهرباء أعلى',v:2.2},
+  {l:'رواتب مباشرة أقل',sub:'35,633 مقابل 45,121',v:-9.5},
+  {l:'بنود أخرى',v:-1.8}]});
+chart('c-be',(c,W)=>hbars(c,W,{items:[['فرع الخبر'],['فرع الدمام']],rowH:38,labelW:.26,
+  series:[{name:'مبيعات أكتوبر',color:'var(--s1)',values:[289.3,333.8]},{name:'نقطة التعادل',color:'var(--s2)',values:[277.9,229.7]}],
+  tips:['المبيعات فوق التعادل بـ 3.9%','المبيعات فوق التعادل بـ 31%']}));
+chart('c-scen',(c,W)=>hbars(c,W,{items:[['الوضع الحالي',6.6],['تكلفة البضاعة 32%',20.0],['تكلفة البضاعة 30%',25.7],['مبيعات 350 ألف',42.0],['مبيعات 400 ألف',71.1],['مبيعات 450 ألف',100.2]],rowH:30,labelW:W<480?.46:.3,
+  tips:['مبيعات 289 ألف وتكلفة بضاعة 36.6%','بنفس مبيعات أكتوبر','بنفس مبيعات أكتوبر','زيادة 21% على أكتوبر','زيادة 38% على أكتوبر','زيادة 56% على أكتوبر']}));
+
+/* ---- الكاش ---- */
+const G={op:'var(--s1)',asset:'var(--s2)',sister:'var(--s3)',tax:'var(--s4)',misc:'var(--s0)'};
+seg('seg2','seglegend2',[['تشغيل الشركة',78.2,G.op],['أصول (آلات ومعدات ولوحات)',10.2,G.asset],['شركات شقيقة',9.8,G.sister],['ضريبة وعهد',1.8,G.tax]],'من كل 100 ر.س مدفوعة');
+rows('r-bridge',{neg:60,pos:100,signed:true,total:['التغير في الكاش','+193.4'],items:[
+  {l:'صافي الربح',v:94.8},
+  {l:'بضاعة مسجلة تكلفة وما اندفعت',pill:'مؤجل',sub:'تكلفة 229.2 مقابل مشتريات مدفوعة 152.1',v:77.1},
+  {l:'تحصيل أعلى من الإيراد المسجل',pill:'مؤجل',sub:'الأقرب إنها ضريبة محصّلة من العملاء',v:43.9},
+  {l:'إهلاك',sub:'مصروف بدون دفع',v:39.9},
+  {l:'تسويق مسجل وما اندفع',pill:'مؤجل',sub:'33.9 مسجل مقابل 10.5 مدفوع',v:23.4},
+  {l:'تطبيقات التوصيل وفرق الرسوم البنكية',sub:'مسجلة كمصروف وما لها دفعة مقابلة في بيان الكاش',v:20.3},
+  {l:'إيجار مسجل وما اندفع',pill:'مؤجل',sub:'46.5 مسجل مقابل 32.8 مدفوع',v:13.6},
+  {l:'فروقات صغيرة',v:-7.5},
+  {l:'أصول',sub:'آلات ومعدات ودفعة لوحات',v:-52.7},
+  {l:'شركات شقيقة',sub:'بالية 27.7 · مشاري 20.0 · ونا 2.6',v:-50.3},
+  {l:'ضريبة الربع الثالث',v:-8.8},
+  {l:'عهد',v:-0.5}]});
+rows('r-pay',{pos:152.1,items:[
+  {l:'مشتريات ومطبوعات',v:152.1,pct:'29.5%',color:G.op},
+  {l:'رواتب وأجور',v:125.5,pct:'24.4%',color:G.op},
+  {l:'أصول',sub:'آلات ومعدات ودفعة لوحات',v:52.7,pct:'10.2%',color:G.asset},
+  {l:'إيجارات',sub:'مخازن، حفلة، سكن مدير تشغيل',v:32.8,pct:'6.4%',color:G.op},
+  {l:'تمويل بالية',sub:'شركة شقيقة',v:27.7,pct:'5.4%',color:G.sister},
+  {l:'إقامات وكروت عمل ونقل كفالة',v:24.7,pct:'4.8%',color:G.op},
+  {l:'سلفة شركة مشاري',sub:'شركة شقيقة',v:20.0,pct:'3.9%',color:G.sister},
+  {l:'مصاريف تسويقية',v:10.5,pct:'2.0%',color:G.op},
+  {l:'تصفية مستحقات',v:9.5,pct:'1.9%',color:G.op},
+  {l:'كهرباء',v:9.0,pct:'1.8%',color:G.op},
+  {l:'ضريبة الربع الثالث',v:8.8,pct:'1.7%',color:G.tax},
+  {l:'17 بند آخر',sub:'أكبرها خدمات تعقيب 7.6 وتأمين طبي 6.8 ونقل 6.7',v:41.5,pct:'8.1%',color:G.misc}]});
+
+let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>charts.forEach(f=>f()),120)});
+</script>
+</body>
+</html>
